@@ -22,3 +22,13 @@ developed by [Florian Schneider](https://github.com/fdschneider/jekyll-lablog)
 ### Deploy the Notebook
 clone the repository to your machine. Then in terminal, navigate to the repository and use:
   `jekyll serve` to run it locally. Jekyll will provide a local url to navigate to in your internet browser.
+  ## Personalize the notebook
+  edit the` _config.yml` file to personalize your notebook
+
+## Putting an image in your post
+  sometimes a picture is worth a thousand words! If you need to insert a picture into your blog post:
+  1. drop the image into `_assets>images`
+  2. in your post, write ![alt text]({{ site.baseurl }}\_assets\images\YOUR_IMAGE_NAME.png)
+
+## Add a link to your post
+  `[your_display_text](url)` 
