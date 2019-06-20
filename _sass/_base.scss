@@ -1,0 +1,469 @@
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+    margin: 2px;
+    padding: 0;
+}
+
+
+
+/**
+ * Basic styling
+ */
+body {
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    color: $text-color;
+    background-color: $background-color;
+    -webkit-text-size-adjust: 100%;
+}
+
+
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+    margin-bottom: $spacing-unit / 2;
+}
+
+
+
+/**
+ * Images
+ */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+
+
+/**
+ * Figures
+ */
+figure > img {
+    display: block;
+}
+
+figcaption {
+    font-size: $small-font-size;
+}
+
+
+
+/**
+ * Lists
+ */
+ul, ol {
+    margin-left: $spacing-unit;
+}
+
+li {
+    > ul,
+    > ol {
+         margin-bottom: 0;
+    }
+}
+
+
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
+
+
+
+/**
+ * Links
+ */
+a {
+    color: $brand-color;
+    text-decoration: none;
+
+    &:visited {
+        color: #a9d1d1;
+    }
+
+    &:hover {
+        color: $text-color;
+        text-decoration: underline;
+    }
+}
+
+
+
+/**
+ * Blockquotes
+ */
+blockquote {
+    color: $grey-color;
+    border-left: 4px solid $grey-color-light;
+    padding-left: $spacing-unit / 2;
+    letter-spacing: -1px;
+    font-style: italic;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.footnotes {
+  margin-top: 3em;
+  font-size: 80%;
+}
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+    font-family: $code-font-family;
+    font-size: $code-font-size;
+    border: 1px solid $grey-color-light;
+    border-radius: 3px;
+    background-color: #f8f8f8;
+}
+
+code {
+    padding: 1px 5px;
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: auto;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+
+
+/**
+ * Wrapper
+ */
+.wrapper {
+    max-width: -webkit-calc(800px - (#{$spacing-unit} * 2));
+    max-width:         calc(800px - (#{$spacing-unit} * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+    @extend %clearfix;
+
+    @include media-query($on-laptop) {
+        max-width: -webkit-calc(800px - (#{$spacing-unit}));
+        max-width:         calc(800px - (#{$spacing-unit}));
+        padding-right: $spacing-unit / 2;
+        padding-left: $spacing-unit / 2;
+    }
+}
+
+
+/**
+ * Tags
+ */
+
+
+.tag {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 60%;
+  font-weight: bold;
+  line-height: 1;
+  color: $tag-default-fg;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+
+  // Empty labels collapse automatically (not available in IE8)
+  &:empty {
+    display: none;
+  }
+
+
+  @include tag-variant($tag-default-bg);
+
+}
+
+// Add hover effects, but only for links
+a.tag {
+  &:hover {
+    color: lighten($tag-default-fg, 10%);
+    text-decoration: none;
+    cursor: pointer;
+
+  }
+
+  &:visited,
+  &:focus {
+    color: $tag-default-fg;
+  }
+}
+
+
+
+
+
+
+
+
+/**
+ * collapse buttons
+ */
+
+label i.toggle-content  {
+  padding-left: 0px;
+  color: $grey-color-light;
+  &:hover {
+    color: $grey-color;
+  }
+
+  &:before {
+    font: normal normal normal 100% lablogIcons;
+    content: "\f067";
+  }
+
+}
+
+
+.collapse {
+  max-height: 0;
+  overflow: hidden;
+  /*padding-left: 30px;*/
+  transition: max-height 1s ease;
+}
+//
+// input[type=checkbox] {
+//     position: absolute;
+//     left: 0;
+//     margin-left: 0;
+//     opacity: 0;
+//     z-index: 2;
+//     cursor: pointer;
+//     height: 1em;
+//     width: 1em;
+//     top: 0;
+//
+//   &:checked ~ .collapse {
+//     max-height: 100%;
+//     transition: max-height 1s ease;
+//   }
+//
+//   &:checked ~ label + {
+//     i.toggle-content  {
+//       color: $grey-color;
+//       &:before {content: "\f068";}
+//       &:hover {
+//         color: $grey-color-light;
+//       }
+//     }
+//   }
+//
+// }
+//
+// /**
+//  * Tasklists
+//  */
+//     p.tasklist_id {
+//      margin-top: 1em;
+//      border-top: 1px solid $grey-color;
+//      font-size: 8pt;
+//      color: $grey-color;
+//      text-align: right;
+//    }
+//
+//
+//    ul.tasklist {
+//       font-weight: 300;
+//       list-style-type: none;
+//       line-height: $base-font-size * 2;
+//
+//     span.task_quite_important {
+//       display: inline;
+//       padding: .0em .6em .0em;
+//       font-size: 100%;
+//       font-weight: bold;
+//       line-height: 1;
+//       color: white;
+//       background-color: #C3DA67;
+//       text-align: center;
+//       white-space: nowrap;
+//       vertical-align: baseline;
+//       border-radius: 1em;
+//     }
+//     span.task_important {
+//       display: inline;
+//       padding: .0em .6em .0em;
+//       font-size: 100%;
+//       font-weight: bold;
+//       line-height: 1;
+//       color: white;
+//       background-color: #00ADEF;
+//       text-align: center;
+//       white-space: nowrap;
+//       vertical-align: baseline;
+//       border-radius: 1em;
+//     }
+//     span.task_very_important {
+//       display: inline;
+//       padding: .0em .6em .0em;
+//       font-size: 100%;
+//       font-weight: bold;
+//       line-height: 1;
+//       color: white;
+//       background-color: #F05A28;
+//       text-align: center;
+//       white-space: nowrap;
+//       vertical-align: baseline;
+//       border-radius: 1em;
+//     }
+//
+//     & > li {
+//       text-indent: -1.4em;
+//       font-style: italic;
+//       font-size: $base-font-size * 1.2;
+//
+//       @include media-query($on-palm) {
+//         font-size: $base-font-size;
+//       }
+//
+//         &:before {
+//         float: left;
+//         width: 1.4em;
+//       }
+//
+//       &.box {
+//         font-style: normal;
+//
+//
+//         &:before {
+//             font: normal normal normal $base-font-size lablogIcons;
+//             padding-top: 0.5em;
+//             content: "\f096";
+//         }
+//       }
+//
+//       &.box_done {
+//         font-style: normal;
+//         font-size: $base-font-size * 1.2;
+//         color: $grey-color;
+//         text-decoration: line-through;
+//         max-height: 0;
+//         overflow: hidden;
+//
+//         &:before {
+//           font: normal normal normal $base-font-size lablogIcons;
+//           padding-top: 0.5em;
+//           content: "\f046";
+//           color: $grey-color;
+//         }
+//       }
+//
+//       & > ul {
+//           padding-bottom: 0.5em;
+//
+//         & > li {
+//           line-height: $base-font-size * 1.5;
+//           font-size: $base-font-size;
+//           text-indent: -1.4em;
+//
+//           &:before {
+//             float: left;
+//             width: 1.4em;
+//           }
+//
+//         &.box_done:before {
+//             font: normal normal normal $base-font-size lablogIcons;
+//             padding-top: 0.3em;
+//             content: "\f046";
+//             color: $grey-color;
+//         }
+//
+//         &.box:before {
+//             font: normal normal normal $base-font-size lablogIcons;
+//             padding-top: 0.3em;
+//             content: "\f096";
+//         }
+//         & > ul {
+//             padding-bottom: 0.5em;
+//
+//           & > li {
+//             line-height: $base-font-size * 1.2;
+//             font-size: $base-font-size * 0.9;
+//             text-indent: -1.4em;
+//
+//             &:before {
+//               float: left;
+//               width: 1.4em;
+//             }
+//
+//           &.box_done:before {
+//               font: normal normal normal $base-font-size lablogIcons;
+//               padding-top: 0em;
+//               content: "\f046";
+//               color: $grey-color;
+//           }
+//
+//           &.box:before {
+//               font: normal normal normal $base-font-size lablogIcons;
+//               padding-top: 0em;
+//               content: "\f096";
+//           }
+//
+//         }
+//         }
+//       }
+//     }
+//
+//   }
+//
+// }
+//
+
+
+
+/**
+ * Clearfix
+ */
+%clearfix {
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+
+
+/**
+ * Icons
+ */
+.icon {
+
+    > svg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+
+        path {
+            fill: $grey-color;
+        }
+    }
+}

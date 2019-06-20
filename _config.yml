@@ -2,14 +2,14 @@
 title: Your Lab Notebook # type your own lablog title here
 
 description: > # this means to ignore newlines until "baseurl:"
-  write a description of your notebook
-baseurl: "/your_compsysmed_labnotebook" # the subpath of your site, e.g. /blog/
+  .
+baseurl: "/lastname_compsysmed_notebook" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 include: [ _assets , _projects ]
 
-name : FirstName LastName
-email : email@email.com
-github_username: Github username
+name : 
+email : 
+github_username: 
 
 # Build settings
 markdown: kramdown
@@ -26,4 +26,4 @@ defaults:   # overwrite with in YAML frontmatter, e.g. 'place: New York'
     values:
       layout: "post"
       place:  # default Geolocation of posts.
-      author: 'your name' # default author for posts (for multi-authoring)
+      author: 'yourname' # default author for posts (for multi-authoring)

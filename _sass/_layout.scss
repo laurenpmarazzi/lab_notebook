@@ -1,0 +1,349 @@
+/**
+ * Site header
+ */
+.site-header {
+    border-top: 0px solid $brand-color;
+    border-bottom: 1px solid $grey-color-light;
+
+    min-height: 56px;
+
+    // Positioning context for the mobile navigation icon
+    position: relative;
+}
+
+.site-title {
+    font-style: regular;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 56px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    float: left;
+
+    &,
+    &:visited {
+        color: $grey-color-dark;
+    }
+}
+
+
+/*
+ *Site menu
+ */
+
+.main-menu {
+  input[type=checkbox] { /*make checkbox invisible*/
+      position: fixed;
+      left: 1;
+      margin-left:1;
+      opacity: 0;
+      z-index: 3;
+      cursor: pointer;
+      height: 1em;
+      width: 1em;
+      top: 0;
+
+      &:checked ~ .trigger {
+          position: fixed;
+          display: block;
+          right: 0px;
+          top: 0px;
+          padding-top: 50px;
+          padding-right: 20px;
+          z-index: 2;
+          width: 30%;
+          /*min-width: 300px; make responsive size*/
+          height: 100%;
+          background-color: $brand-color-dark;
+          zoom: 1;
+          filter: alpha(opacity=50);
+          opacity: 0.9;
+
+    @include media-query($on-laptop) {
+      width: 50%;
+    }
+    @include media-query($on-palm) {
+      width: 100%;
+    }
+
+          .page-link {
+               font-size: $base-font-size*1.2;
+               color: $brand-color;
+               text-align: left;
+               display: block;
+               line-height: $base-line-height;
+               clear: both;
+               margin: 0px 30px;
+               padding: 5px 20px;
+                   // Gaps between nav items, but not on the first one
+                   &:first-child {
+                       margin-top: 20px;
+                   }
+           }
+
+           .menu-content {
+                font-size: $base-font-size*0.8;
+                color: $brand-color;
+                line-height: $base-line-height;
+                text-align: left;
+                display: block;
+                clear: both;
+                margin: 0px 30px;
+                padding: 5px 20px;
+              }
+
+      }
+
+
+      &:checked ~ label {
+        color: $brand-color;
+
+      }
+      &:checked ~ label:before {
+        font: normal normal normal $base-font-size*2 lablogIcons;
+        content: "\f00d";
+      }
+      }
+
+  label {
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    padding-top: 10px;
+    padding-right: 20px;
+    z-index: 3;
+    color: $brand-color-dark;
+
+    &:before {
+      font: normal normal normal $base-font-size*2 lablogIcons;
+      content: "\f0c9";
+
+    }
+
+    &:hover {
+      color: $brand-color;
+    }
+
+  }
+
+  .trigger {
+      width: 0;
+      overflow: hidden;
+      transition: width 0.3s ease;
+      .page-link, .menu-content {
+          display: none;
+          }
+    }
+
+}
+
+
+
+/**
+ * browse buttons
+ */
+
+.turn{
+font-family: lablogIcons;
+position: fixed;
+height: 300px;
+margin: auto 0 auto 0;
+width: 75px;
+top: 0px;
+text-align: center;
+font-size: 200%;
+color: $grey-color-light;
+
+  span {
+    position: absolute;
+    width:100%;
+    height:100%;
+    line-height: 300px;
+    top: 150px;
+    left: 0;
+    z-index: 1;
+
+    & :hover{background-color:#009999;}
+
+  }
+
+  @include media-query($on-laptop + 50) {
+    position: fixed;
+    height: 50px;
+    bottom: 0px;
+    margin: auto 0 0 0;
+    width: 50%;
+    background-color: $background-color;
+    border-top: 1px solid $grey-color-light;
+    span { line-height: 25px; top: 12px;}
+  }
+
+
+  a:link {color: $brand-color; text-decoration:none}
+  a:visited {color: $brand-color; text-decoration:none}
+  a:hover {color: $brand-color; text-decoration:none;}
+
+
+
+}
+
+
+
+
+/**
+ * Site footer
+ */
+.site-footer {
+    border-top: 1px solid $grey-color-light;
+    padding: $spacing-unit 0;
+}
+
+.footer-heading {
+    font-size: 18px;
+    margin-bottom: $spacing-unit / 2;
+}
+
+.contact-list,
+.social-media-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+.footer-col-wrapper {
+    font-size: 15px;
+    color: $grey-color;
+    margin-left: -$spacing-unit / 2;
+    @extend %clearfix;
+}
+
+.footer-col {
+    float: left;
+    margin-bottom: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+}
+
+.footer-col-1 {
+    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
+    width:         calc(35% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-2 {
+    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
+    width:         calc(20% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-3 {
+    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
+    width:         calc(45% - (#{$spacing-unit} / 2));
+}
+
+@include media-query($on-laptop) {
+    .footer-col-1,
+    .footer-col-2 {
+        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+        width:         calc(50% - (#{$spacing-unit} / 2));
+    }
+
+    .footer-col-3 {
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}
+
+@include media-query($on-palm) {
+    .footer-col {
+        float: none;
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}
+
+
+
+/**
+ * Page content
+ */
+.page-content {
+    padding: $spacing-unit 0;
+}
+
+.page-heading {
+    font-size: 20px;
+}
+
+.post-list {
+    margin-left: 0;
+    list-style: none;
+
+    > li {
+        margin-bottom: $spacing-unit;
+    }
+}
+
+.post-meta {
+    font-size: $small-font-size;
+    color: $grey-color;
+    white-space: nowrap;
+}
+
+.post-link {
+    font-size: 24px;
+}
+
+
+
+/**
+ * Posts
+ */
+.post-header {
+    margin-bottom: $spacing-unit;
+}
+
+.post-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+    line-height: 1;
+
+    @include media-query($on-laptop) {
+        font-size: 36px;
+    }
+}
+
+.post-content {
+    margin-bottom: $spacing-unit;
+    h1 {
+        font-size: 36px;
+
+        @include media-query($on-laptop) {
+            font-size: 32px;
+        }
+    }
+    h2 {
+        font-size: 32px;
+
+        @include media-query($on-laptop) {
+            font-size: 28px;
+        }
+    }
+
+    h3 {
+        font-size: 26px;
+
+        @include media-query($on-laptop) {
+            font-size: 22px;
+        }
+    }
+
+    h4 {
+        font-size: 20px;
+
+        @include media-query($on-laptop) {
+            font-size: 18px;
+        }
+    }
+}
+
+.tag_list {
+  font-size: 120%;
+
+}

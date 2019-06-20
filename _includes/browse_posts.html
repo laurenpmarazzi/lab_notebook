@@ -1,0 +1,27 @@
+
+<div class="wrapper">
+
+{% if page.next %}
+<div class = "turn" style = " right: 0px" >
+ <a rel = "next" href="{{ page.next.url | prepend: site.baseurl }}"> <span> &rsaquo; </span></a>
+</div>
+
+{% else %}
+<div class = "turn" style = " right: 0px" >
+  <span> &rsaquo; </span>
+</div>
+{% endif %}
+
+
+{% if page.previous %}
+<div class = "turn" style = " left: 0px" >
+ <a rel = "prev" href="{{ page.previous.url | prepend: site.baseurl }}"> <span> &lsaquo; </span></a>
+</div>
+
+{% else %}
+<div class = "turn" style = " left: 0px" >
+  <span> &lsaquo; </span>
+</div>
+{% endif %}
+
+</div>

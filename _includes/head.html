@@ -1,0 +1,50 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ site.description }}">
+
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+<!-- meta robots -->
+    {% if site.noindex or page.noindex %}
+     	<meta name="robots" content="noindex" />
+    {% endif %}
+
+<!-- loading fonts -->
+    <!-- Open Sans -->
+    <link href="{{ '/_assets/open_sans/style.css' | prepend: site.baseurl | prepend: site.url }}" rel="stylesheet">
+
+    <!-- own icon font, created via https://icomoon.io/  -->
+    <link href="{{ '/_assets/lablogIcons/style.css' | prepend: site.baseurl | prepend: site.url }}" rel="stylesheet">
+
+    <!-- Ubuntu Mono for code -->
+    <link href="{{ '/_assets/Ubuntu_Mono/style.css' | prepend: site.baseurl | prepend: site.url }}" rel='stylesheet' type='text/css'>
+
+<!-- mathjax.org for math equations -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    imageFont: null,
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]} ,
+    menuSettings: { context: "Browser" }
+    });
+    </script>
+
+    <script type="text/javascript"  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+<!-- highlight.js for code syntax highlighting-->
+<link rel="stylesheet" href="{{ '/_assets/highlight/styles/github.css' | prepend: site.baseurl | prepend: site.url }}">
+<script src="{{ '/_assets/highlight/highlight.pack.js' | prepend: site.baseurl | prepend: site.url }}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css">
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>-->
+
+
+</head>
