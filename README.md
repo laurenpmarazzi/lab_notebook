@@ -31,4 +31,4 @@ sometimes a picture is worth a thousand words! If you need to insert a picture i
 2. in your post, write ![alt text]({{ site.baseurl }}\_assets\images\YOUR_IMAGE_NAME.png)
 
 ## Add a link to your post
-`[your_display_text](url)` (without the \`\`s)
+`[your_display_text](url)`
